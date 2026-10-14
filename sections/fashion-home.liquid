@@ -1,6 +1,5 @@
 <div class="fashion-home full-width">
   <section class="fashion-hero">
-    <div class="fashion-hero__wash"></div>
     <div class="fashion-hero__carousel" aria-label="Featured collection carousel">
       {% assign default_slide_image = 'header.webp' | asset_url %}
       <div class="fashion-hero__slide" style="--slide: 0">{% if section.settings.slide_1_image != blank %}{{ section.settings.slide_1_image | image_url: width: 2400 | image_tag: class: 'fashion-hero__image', loading: 'eager' }}{% else %}<img class="fashion-hero__image" src="{{ default_slide_image }}" width="1600" height="900" alt="MarkAvenue collection" loading="eager">{% endif %}</div>
@@ -16,7 +15,6 @@
         <a class="fashion-button fashion-button--light" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }} <span aria-hidden="true">↗</span></a>
       {% endif %}
     </div>
-    <div class="fashion-hero__stamp" aria-hidden="true">NEW<br>SEASON</div>
   </section>
 
   <div class="fashion-ticker" aria-label="Store benefits">
@@ -71,7 +69,7 @@
   @keyframes markavenue-slide { 0%, 23% { opacity: 1; } 25%, 100% { opacity: 0; } }
   .fashion-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; mix-blend-mode: multiply; opacity: .84; }
   .fashion-hero__wash { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(23,26,21,.62), rgba(23,26,21,.04) 75%), linear-gradient(0deg, rgba(23,26,21,.42), transparent 45%); }
-  .fashion-hero__content { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 90px 0 76px; color: #fffdf8; }
+  .fashion-hero__content { display: none; }
   .fashion-eyebrow { margin: 0 0 18px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; }
   .fashion-hero h1 { max-width: 680px; margin: 0; font-size: clamp(3.4rem, 8vw, 7.6rem); line-height: .9; letter-spacing: -.07em; font-weight: 500; }
   .fashion-hero__text { max-width: 390px; margin: 28px 0 30px; font-size: 16px; line-height: 1.5; }
