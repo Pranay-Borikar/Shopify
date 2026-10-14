@@ -1,4 +1,5 @@
-<div class="site-header-wrap">
+<div class="site-header-wrap full-width">
+  <div class="site-announcement__track"><span>{{ section.settings.announcement }}</span><b>✦</b><span>{{ section.settings.announcement }}</span><b>✦</b><span>{{ section.settings.announcement }}</span><b>✦</b><span>{{ section.settings.announcement }}</span><b>✦</b></div>
   <div class="site-announcement">{{ section.settings.announcement }} <span>✦</span> {{ section.settings.announcement }}</div>
   <header class="site-header">
     <h2 class="header__title">
@@ -28,9 +29,11 @@
 </div>
 
 {% stylesheet %}
-  .site-header-wrap { position: relative; z-index: 3; }
-  .site-announcement { display: flex; justify-content: center; gap: 20px; padding: 9px 20px; overflow: hidden; background: #333a30; color: #fff; white-space: nowrap; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-  .site-announcement span { color: #cbcb97; }
+  .site-header-wrap { position: relative; z-index: 3; width: 100%; overflow: hidden; }
+  .site-announcement { display: none; }
+  .site-announcement__track { display: flex; width: max-content; gap: 28px; padding: 9px 28px; background: #333a30; color: #fff; white-space: nowrap; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; animation: markavenue-marquee 28s linear infinite; }
+  .site-announcement__track b { color: #cbcb97; font-weight: 400; }
+  @keyframes markavenue-marquee { from { transform: translateX(0); } to { transform: translateX(-25%); } }
   header {
     width: min(1180px, calc(100% - 48px));
     height: 4.6rem;
