@@ -1,0 +1,26 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Price,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Requires Shipping,Variant Taxable,Status
+meadow-day-dress,Meadow Day Dress,<p>A softly structured everyday dress from the MarkAvenue edit.</p>,MarkAvenue,Dresses,"dress, new-arrivals",TRUE,Title,Default Title,MA-001,79.00,25,deny,manual,TRUE,TRUE,active
+olive-midi-dress,Olive Midi Dress,<p>A relaxed midi silhouette with an easy drape.</p>,MarkAvenue,Dresses,"dress, dresses",TRUE,Title,Default Title,MA-002,89.00,25,deny,manual,TRUE,TRUE,active
+linen-wrap-dress,Linen Wrap Dress,<p>A timeless wrap dress designed for warm days.</p>,MarkAvenue,Dresses,"dress, linen",TRUE,Title,Default Title,MA-003,96.00,25,deny,manual,TRUE,TRUE,active
+garden-party-dress,Garden Party Dress,<p>A feminine floral-inspired dress for special days.</p>,MarkAvenue,Dresses,"dress, occasion",TRUE,Title,Default Title,MA-004,109.00,25,deny,manual,TRUE,TRUE,active
+everyday-shirt,Everyday Cotton Shirt,<p>A crisp shirt that works from morning to evening.</p>,MarkAvenue,Tops,"shirt, essentials",TRUE,Title,Default Title,MA-005,55.00,25,deny,manual,TRUE,TRUE,active
+soft-rib-top,Soft Rib Top,<p>A fitted rib top for layering and everyday wear.</p>,MarkAvenue,Tops,"top, essentials",TRUE,Title,Default Title,MA-006,39.00,25,deny,manual,TRUE,TRUE,active
+romantic-blouse,Romantic Blouse,<p>A light blouse with delicate gathered details.</p>,MarkAvenue,Tops,"blouse, new-arrivals",TRUE,Title,Default Title,MA-007,68.00,25,deny,manual,TRUE,TRUE,active
+garden-cardigan,Garden Cardigan,<p>A soft layer with a vintage-inspired shape.</p>,MarkAvenue, knitwear,"cardigan, layers",TRUE,Title,Default Title,MA-008,84.00,25,deny,manual,TRUE,TRUE,active
+classic-trench,Classic Trench Coat,<p>A polished outer layer for changing seasons.</p>,MarkAvenue,Outerwear,"coat, outerwear",TRUE,Title,Default Title,MA-009,149.00,25,deny,manual,TRUE,TRUE,active
+soft-wool-jacket,Soft Wool Jacket,<p>A warm tailored jacket with an easy fit.</p>,MarkAvenue,Outerwear,"jacket, layers",TRUE,Title,Default Title,MA-010,129.00,25,deny,manual,TRUE,TRUE,active
+wide-leg-trouser,Wide Leg Trouser,<p>A flattering trouser with a relaxed leg.</p>,MarkAvenue,Bottoms,"trouser, bottoms",TRUE,Title,Default Title,MA-011,74.00,25,deny,manual,TRUE,TRUE,active
+pleated-skirt,Pleated Midi Skirt,<p>A graceful pleated skirt for everyday styling.</p>,MarkAvenue,Bottoms,"skirt, bottoms",TRUE,Title,Default Title,MA-012,72.00,25,deny,manual,TRUE,TRUE,active
+denim-midi-skirt,Denim Midi Skirt,<p>A modern denim staple with a vintage mood.</p>,MarkAvenue,Bottoms,"denim, skirt",TRUE,Title,Default Title,MA-013,79.00,25,deny,manual,TRUE,TRUE,active
+cotton-cropped-jean,Cotton Cropped Jean,<p>A cropped jean with a comfortable straight fit.</p>,MarkAvenue,Bottoms,"denim, jeans",TRUE,Title,Default Title,MA-014,69.00,25,deny,manual,TRUE,TRUE,active
+embroidered-cami,Embroidered Cami,<p>A delicate cami finished with small embroidered details.</p>,MarkAvenue,Tops,"top, occasion",TRUE,Title,Default Title,MA-015,49.00,25,deny,manual,TRUE,TRUE,active
+striped-knit,Striped Knit Top,<p>A lightweight knit with a classic stripe.</p>,MarkAvenue, knitwear,"knitwear, top",TRUE,Title,Default Title,MA-016,59.00,25,deny,manual,TRUE,TRUE,active
+summer-cotton-set,Summer Cotton Set,<p>A coordinated two-piece set for easy dressing.</p>,MarkAvenue,Sets,"set, summer",TRUE,Title,Default Title,MA-017,99.00,25,deny,manual,TRUE,TRUE,active
+butterfly-scarf,Butterfly Silk Scarf,<p>A printed scarf to finish your everyday look.</p>,MarkAvenue,Accessories,"accessories, scarf",TRUE,Title,Default Title,MA-018,32.00,25,deny,manual,TRUE,TRUE,active
+woven-market-bag,Woven Market Bag,<p>A roomy woven bag for weekends and everyday errands.</p>,MarkAvenue,Bags,"bag, accessories",TRUE,Title,Default Title,MA-019,58.00,25,deny,manual,TRUE,TRUE,active
+leather-mini-bag,Leather Mini Bag,<p>A compact bag for the essentials.</p>,MarkAvenue,Bags,"bag, accessories",TRUE,Title,Default Title,MA-020,88.00,25,deny,manual,TRUE,TRUE,active
+pearl-drop-earrings,Pearl Drop Earrings,<p>Simple pearl drops with a softly polished finish.</p>,MarkAvenue,Jewelry,"jewelry, earrings",TRUE,Title,Default Title,MA-021,44.00,25,deny,manual,TRUE,TRUE,active
+gold-hoop-earrings,Gold Hoop Earrings,<p>An everyday hoop with a warm gold tone.</p>,MarkAvenue,Jewelry,"jewelry, earrings",TRUE,Title,Default Title,MA-022,38.00,25,deny,manual,TRUE,TRUE,active
+delicate-chain-necklace,Delicate Chain Necklace,<p>A fine chain made for layering.</p>,MarkAvenue,Jewelry,"jewelry, necklace",TRUE,Title,Default Title,MA-023,46.00,25,deny,manual,TRUE,TRUE,active
+oval-hair-clip,Oval Hair Clip,<p>A simple finishing touch for an effortless updo.</p>,MarkAvenue,Accessories,"accessories, hair",TRUE,Title,Default Title,MA-024,18.00,25,deny,manual,TRUE,TRUE,active
+canvas-sun-hat,Canvas Sun Hat,<p>A structured sun hat for long summer days.</p>,MarkAvenue,Accessories,"accessories, hat",TRUE,Title,Default Title,MA-025,42.00,25,deny,manual,TRUE,TRUE,active
