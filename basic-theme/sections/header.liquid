@@ -1,0 +1,99 @@
+<div class="site-header-wrap">
+  <div class="site-announcement">{{ section.settings.announcement }} <span>✦</span> {{ section.settings.announcement }}</div>
+  <header class="site-header">
+    <h2 class="header__title">
+      {{ 'MarkAvenue' | link_to: routes.root_url }}
+    </h2>
+
+    <div class="header__menu">
+      {% for link in section.settings.menu.links %}
+        {{ link.title | link_to: link.url }}
+      {% endfor %}
+    </div>
+
+    <div class="header__icons">
+      {% if shop.customer_accounts_enabled %}
+        {{ 'icon-account.svg' | inline_asset_content | link_to: routes.account_url }}
+      {% endif %}
+
+    <a href="{{ routes.cart_url }}">
+      {% if cart.item_count > 0 %}
+        <sup>{{ cart.item_count }}</sup>
+      {% endif %}
+
+      {{ 'icon-cart.svg' | inline_asset_content }}
+    </a>
+    </div>
+  </header>
+</div>
+
+{% stylesheet %}
+  .site-header-wrap { position: relative; z-index: 3; }
+  .site-announcement { display: flex; justify-content: center; gap: 20px; padding: 9px 20px; overflow: hidden; background: #333a30; color: #fff; white-space: nowrap; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+  .site-announcement span { color: #cbcb97; }
+  header {
+    width: min(1180px, calc(100% - 48px));
+    height: 4.6rem;
+    margin: 12px auto -88px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header a {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-foreground);
+  }
+  header a sup {
+    position: absolute;
+    left: 100%;
+    overflow: hidden;
+    max-width: var(--page-margin);
+  }
+  header svg {
+    width: 2rem;
+  }
+  header {
+    background: #fefefd;
+    padding-inline: 22px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(51,58,48,.08);
+  }
+  .site-header .header__title {
+    font-size: 18px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .site-header .header__menu a {
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .site-header .header__title a { color: #333a30; }
+  header .header__menu,
+  header .header__icons {
+    display: flex;
+    gap: 1rem;
+  }
+  @media (max-width: 700px) {
+    .site-header .header__menu { display: none; }
+    header { width: calc(100% - 24px); margin-top: 8px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.header",
+  "settings": [
+    { "type": "text", "id": "brand_name", "label": "Brand name", "default": "MarkAvenue" },
+    { "type": "text", "id": "announcement", "label": "Announcement", "default": "Join our newsletter and receive $10 off" },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:labels.menu"
+    }
+  ]
+}
+{% endschema %}

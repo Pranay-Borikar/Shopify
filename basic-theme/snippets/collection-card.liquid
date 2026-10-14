@@ -1,0 +1,8 @@
+{% if collection != blank %}
+  <a class="fashion-collection-card" href="{{ collection.url }}">
+    <div class="fashion-collection-card__image">
+      {% if collection.featured_image %}{{ collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy' }}{% else %}{{ 'collection-1' | placeholder_svg_tag }}{% endif %}
+    </div>
+    <span>{{ collection.title }}</span><span class="fashion-collection-card__arrow">↗</span>
+  </a>
+{% endif %}
