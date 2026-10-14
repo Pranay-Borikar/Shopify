@@ -1,0 +1,45 @@
+<section class="vintage-product vintage-product-width">
+  <div class="vintage-product__media">
+    {% if product.images.size > 0 %}{% for image in product.images %}<div class="vintage-product__image">{{ image | image_url: width: 1400 | image_tag: loading: 'lazy' }}</div>{% endfor %}{% else %}<div class="vintage-product__image"><img src="{{ 'product.jpeg' | asset_url }}" width="1400" height="1867" alt="{{ product.title | escape }}"></div>{% endif %}
+  </div>
+  <div class="vintage-product__details">
+    <p class="product-breadcrumb">Home / {{ product.type | default: 'Shop' }} / {{ product.title }}</p>
+    <h1>{{ product.title }}</h1>
+    <p class="vintage-product__price">{{ product.price | money }}</p>
+    <div class="vintage-product__description">{{ product.description }}</div>
+    {% form 'product', product %}
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% unless product.has_only_default_variant %}<label class="product-label" for="ProductSelect-{{ section.id }}">Select an option</label><select class="product-select" name="id" id="ProductSelect-{{ section.id }}">{% for variant in product.variants %}<option value="{{ variant.id }}" {% if variant == current_variant %}selected{% endif %}>{{ variant.title }} — {{ variant.price | money }}</option>{% endfor %}</select>{% else %}<input type="hidden" name="id" value="{{ current_variant.id }}">{% endunless %}
+      <label class="product-label" for="Quantity-{{ section.id }}">Quantity</label><input class="product-quantity" id="Quantity-{{ section.id }}" type="number" name="quantity" min="1" value="1">
+      <button class="product-add" type="submit" {% unless current_variant.available %}disabled{% endunless %}>{% if current_variant.available %}Add to cart{% else %}Sold out{% endif %}</button>{{ form | payment_button }}
+    {% endform %}
+    <div class="product-note">✦ Free shipping on orders over $100<br>✦ Designed with care for everyday wear</div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .vintage-product-width { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+  .vintage-product { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: clamp(30px, 6vw, 90px); padding: 54px 0 100px; }
+  .vintage-product__media { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-content: start; }
+  .vintage-product__image { overflow: hidden; border-radius: 10px; background: #ededdb; }
+  .vintage-product__image:first-child { grid-column: 1 / -1; }
+  .vintage-product__image img { width: 100%; height: 100%; object-fit: cover; }
+  .vintage-product__details { position: sticky; top: 30px; align-self: start; padding-top: 25px; }
+  .product-breadcrumb { margin-bottom: 28px; color: #777b70; font-size: 11px; }
+  .vintage-product h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1; letter-spacing: -.05em; }
+  .vintage-product__price { margin-bottom: 28px; font-size: 16px; }
+  .vintage-product__description { margin-bottom: 28px; color: #5e6259; font-size: 14px; line-height: 1.6; }
+  .product-label { display: block; margin: 18px 0 8px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+  .product-select, .product-quantity { width: 100%; padding: 13px 16px; border: 1px solid #bfc19d; border-radius: 40px; background: #fff; color: #333a30; }
+  .product-quantity { max-width: 120px; }
+  .product-add { width: 100%; margin-top: 22px; padding: 16px; border: 2px solid #333a30; border-radius: 40px; background: #333a30; color: white; cursor: pointer; font: inherit; }
+  .product-add:hover { background: #a8a854; border-color: #a8a854; }
+  .product-add:disabled { opacity: .5; cursor: not-allowed; }
+  .vintage-product__details .shopify-payment-button { margin-top: 10px; }
+  .product-note { margin-top: 30px; padding-top: 20px; border-top: 1px solid #dfe0c7; color: #5e6259; font-size: 12px; line-height: 1.9; }
+  @media (max-width: 750px) { .vintage-product-width { width: calc(100% - 32px); } .vintage-product { display: block; padding-top: 25px; } .vintage-product__details { position: static; padding-top: 35px; } }
+{% endstylesheet %}
+
+{% schema %}
+{ "name": "Vintage product", "settings": [] }
+{% endschema %}
