@@ -6,9 +6,9 @@
     </h2>
 
     <div class="header__menu">
-      {% for link in section.settings.menu.links %}
-        {{ link.title | link_to: link.url }}
-      {% endfor %}
+      {% if section.settings.menu != blank %}{% for link in section.settings.menu.links %}{{ link.title | link_to: link.url }}{% endfor %}{% else %}
+        <a href="{{ routes.root_url }}">Home</a><a href="{{ routes.all_products_collection_url }}">Shop</a><a href="{{ routes.root_url }}">Gift Cards</a><a href="/pages/brand-story">Brand Story</a><a href="/pages/faqs">FAQs</a><a href="/pages/lookbook">Lookbook</a><a href="{{ routes.blogs_url }}">Blog</a>
+      {% endif %}
     </div>
 
     <div class="header__icons">
