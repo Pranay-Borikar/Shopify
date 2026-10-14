@@ -21,6 +21,15 @@
     <span>FREE SHIPPING OVER {{ section.settings.free_shipping_threshold }}</span><span>CONSCIOUSLY MADE</span><span>DESIGNED FOR EVERYDAY</span><span>FREE SHIPPING OVER {{ section.settings.free_shipping_threshold }}</span>
   </div>
 
+  <section class="fashion-latest-products page-width">
+    <div class="fashion-section-heading"><div><p class="fashion-eyebrow">New arrivals</p><h2>Pieces with presence.</h2></div><a class="fashion-text-link" href="{{ routes.all_products_collection_url }}">Shop all <span aria-hidden="true">↗</span></a></div>
+    {% if collections.all.products_count > 0 %}
+      <div class="fashion-product-grid">{% for product in collections.all.products limit: 10 %}<a class="fashion-product-card" href="{{ product.url }}"><div class="fashion-product-card__image">{% if product.featured_image %}{{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 900px) 20vw, 50vw' }}{% else %}<img src="{{ 'product.jpeg' | asset_url }}" width="900" height="1200" alt="{{ product.title | escape }}" loading="lazy">{% endif %}</div><div class="fashion-product-card__info"><span>{{ product.title }}</span><span>{{ product.price | money }}</span></div></a>{% endfor %}</div>
+    {% else %}
+      <div class="fashion-product-grid">{% for index in (1..10) %}<a class="fashion-product-card" href="{{ routes.all_products_collection_url }}"><div class="fashion-product-card__image"><img src="{{ 'product.jpeg' | asset_url }}" width="900" height="1200" alt="MarkAvenue sample product {{ index }}" loading="lazy"></div><div class="fashion-product-card__info"><span>MarkAvenue Edit {{ index }}</span><span>₹1,999</span></div></a>{% endfor %}</div>
+    {% endif %}
+  </section>
+
   <section class="fashion-collections page-width">
     {% render 'collection-card', collection: section.settings.collection_1 %}
     {% render 'collection-card', collection: section.settings.collection_2 %}
@@ -87,6 +96,8 @@
   .fashion-collection-card > span:not(.fashion-collection-card__arrow) { position: absolute; bottom: 14px; left: 14px; right: 14px; padding: 10px 16px; border-radius: 40px; background: rgba(255,255,255,.94); font-size: 11px; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
   .fashion-collection-card__arrow { position: absolute; right: 29px; bottom: 12px; font-size: 16px; }
   .fashion-products { padding: 106px 0 90px; }
+  .fashion-latest-products { padding: 92px 0 72px; }
+  .fashion-products { display: none; }
   .fashion-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 36px; }
   .fashion-section-heading h2, .fashion-story h2 { margin: 0; max-width: 580px; font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: .95; letter-spacing: -.06em; font-weight: 500; }
   .fashion-text-link { display: inline-flex; align-items: center; gap: 12px; color: inherit; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 6px; }
